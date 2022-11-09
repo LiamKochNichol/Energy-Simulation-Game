@@ -1,29 +1,87 @@
-# Simple pygame program
-
-# Import and initialize the pygame library
+# import random
 import pygame
+import select_step as s
+import images as i
+import rects as r
+from sys import exit
+
 pygame.init()
+pygame.font.init()
+font_default = pygame.font.SysFont('None', 70)
+# setting game --------------------------------------------------------------------------
 
-# Set up the drawing window
-screen = pygame.display.set_mode([500, 500])
+# loading assets ------------------------------------------------------------------------
+screen_width = 1366
+screen_height = 768
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Capstone Game")  # name that appears on window
 
-# Run until the user asks to quit
-running = True
-while running:
+clock = pygame.time.Clock()
+game_state = 0
 
-    # Did the user click the window close button?
+# section end -------------------------------------------------------------------------------
+
+while True:  # Main Loop
+    #  power flow computation start
+    pass
+    # power flow computation end
+
+    #  event loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            pygame.quit()
+            exit()
 
-    # Fill the background with white
-    screen.fill((255, 255, 255))
+        game_state = s.select_step(event, game_state)
+    #  event loop end
 
-    # Draw a solid blue circle in the center
-    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+    #  display and UI
+    if game_state in range(0, 100):  # title screen
+        screen.blit(i.bg_00, (0, 0))
+        screen.blit(i.title, (200, 100))
+        screen.blit(i.button_start, r.r_button_start)
 
-    # Flip the display
-    pygame.display.flip()
+    elif game_state in range(100, 200):  # tutorial 1
+        screen.fill((255, 255, 255))
+        screen.blit(i.bg_10, (0, 0))
+        screen.blit(i.button_next, r.r_button_next)
 
-# Done! Time to quit.
-pygame.quit()
+        if game_state == 100:
+            screen.blit(i.text_sample, (0, 625))
+
+        elif game_state == 101:
+            screen.blit(i.text_sample2, (0, 625))
+
+        elif game_state == 102:
+            screen.blit(i.text_sample3, (0, 625))
+            screen.blit(i.mask_tut1_3, (0, 0))
+
+        elif game_state == 103:
+            screen.blit(i.text_sample4, (0, 625))
+
+        elif game_state == 104:
+            screen.blit(i.text_sample5, (0, 625))
+
+
+    elif game_state in range(200, 300):  # tutorial 2
+        pass
+    elif game_state in range(300, 400):  # tutorial 3
+        pass
+    elif game_state in range(400, 500):  # tutorial 4
+        pass
+    elif game_state in range(500, 600):  # game - daily
+        pass
+    elif game_state in range(600, 700):  # game - monthly
+        pass
+    elif game_state in range(700, 800):  # options
+        pass
+    #  display and UI end
+
+    current_time = round(pygame.time.get_ticks()/1000, 1)   # display time on the right, for testing purposes
+    time_surf = font_default.render(str(current_time), False, (0, 0, 0))
+    screen.blit(time_surf, (1220, 20))
+
+    pygame.display.update()
+    clock.tick(30)
+
+
