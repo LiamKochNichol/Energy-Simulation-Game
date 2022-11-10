@@ -14,7 +14,8 @@ font_default = pygame.font.SysFont('None', 70)
 screen_width = 1366
 screen_height = 768
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Capstone Game")  # name that appears on window
+pygame.display.set_caption("Capstone Game")  # Window title
+pygame.display.set_icon(i.window_icon) # Set window icon to wind turbines
 
 clock = pygame.time.Clock()
 game_state = 0
@@ -26,8 +27,9 @@ while True:  # Main Loop
     pass
     # power flow computation end
 
-    #  event loop
+    #  Event loop
     for event in pygame.event.get():
+        # Close the game when close button is pressed
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
@@ -63,8 +65,22 @@ while True:  # Main Loop
             screen.blit(i.text_sample5, (0, 625))
 
 
-    elif game_state in range(200, 300):  # tutorial 2
-        pass
+    elif game_state in range(200, 300):  # tutorial 2 (TEST FOR NOW)
+        screen.fill((255, 255, 255))
+        screen.blit(i.bg_20, (0,0))
+
+        if (game_state == 200):
+            # Nuclear plant
+            nuclear_image = i.nuclear_image.copy()
+            nuclear_image.fill((255, 255, 255, 128))
+            screen.blit(nuclear_image, r.nuclear_rect)
+        elif (game_state == 201):
+            nuclear_image = i.nuclear_image
+            #nuclear_image.fill((0, 0, 0))
+            screen.blit(i.nuclear_image, r.nuclear_rect)
+    
+
+
     elif game_state in range(300, 400):  # tutorial 3
         pass
     elif game_state in range(400, 500):  # tutorial 4
