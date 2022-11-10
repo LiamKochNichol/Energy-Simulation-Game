@@ -31,10 +31,19 @@ def select_step(Event, Game_state):
 
         if Game_state == 105:  # welcome text
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
-                gs_out = 101
+                gs_out = 200
 
-    elif Game_state == 2:
-        pass
+    elif Game_state in range(200, 300): 
+        if Game_state == 200:
+            if Event.type == pygame.MOUSEBUTTONDOWN and r.nuclear_rect.collidepoint(Event.pos):
+                print('nuclear site hit')
+                gs_out = 201
+
+        if Game_state == 201:
+            if Event.type == pygame.MOUSEBUTTONDOWN and r.nuclear_rect.collidepoint(Event.pos):
+                print('nuclear site hit')
+                gs_out = 200
+
     elif Game_state == 3:
         pass
     elif Game_state == 4:
