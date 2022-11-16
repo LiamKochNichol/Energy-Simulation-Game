@@ -14,12 +14,16 @@ font_default = pygame.font.SysFont('None', 70)
 screen_width = 1366
 screen_height = 768
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Capstone Game")  # Window title
-pygame.display.set_icon(i.window_icon) # Set window icon to wind turbines
+pygame.display.set_caption("Capstone Game")  # name that appears on window
 
 clock = pygame.time.Clock()
 game_state = 0
 
+is_slider = 0
+slider_move = [0, 0]
+drag_tabs = [0, 0]
+drag_start = 0
+gen_set = [0, 0]
 # section end -------------------------------------------------------------------------------
 
 while True:  # Main Loop
@@ -27,14 +31,25 @@ while True:  # Main Loop
     pass
     # power flow computation end
 
-    #  Event loop
+    #  event loop
     for event in pygame.event.get():
-        # Close the game when close button is pressed
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
 
         game_state = s.select_step(event, game_state)
+
+        if is_slider:
+            for k in range(0,len(r.r_slider_list)):
+                if event.type == pygame.MOUSEBUTTONDOWN and r.r_slider_list[k].collidepoint(event.pos):
+                    drag_tabs[k] = 1
+                    drag_start = event.pos[0]
+                if event.type == pygame.MOUSEMOTION and drag_tabs[k] == 1:
+                    slider_move[k] = max(666, min(1098, event.pos[0])) - r.r_slider_list[k].centerx
+                    gen_set[k] = round(100 * (r.r_slider_list[k].centerx - 666) / (1098 - 666), 1)
+                if event.type == pygame.MOUSEBUTTONUP:
+                    drag_tabs[k] = 0
+
     #  event loop end
 
     #  display and UI
@@ -64,23 +79,23 @@ while True:  # Main Loop
         elif game_state == 104:
             screen.blit(i.text_sample5, (0, 625))
 
+        elif game_state == 105:
+            screen.blit(i.text_sample5, (0, 625))
+            is_slider = 1
+            screen.blit(i.slider_tut, r.r_slider_tut)
+            r.r_slider_tut_tab1.move_ip((slider_move[0], 0))
+            r.r_slider_tut_tab2.move_ip((slider_move[1], 0))
+            screen.blit(i.slider_tut_tab1, r.r_slider_tut_tab1)
+            screen.blit(i.slider_tut_tab2, r.r_slider_tut_tab2)
+            slider_move = [0, 0]
 
-    elif game_state in range(200, 300):  # tutorial 2 (TEST FOR NOW)
-        screen.fill((255, 255, 255))
-        screen.blit(i.bg_20, (0,0))
+            time_surf = font_default.render(str(gen_set[0]), False, (0, 0, 0))
+            screen.blit(time_surf, (1220, 50))
+            time_surf = font_default.render(str(gen_set[1]), False, (0, 0, 0))
+            screen.blit(time_surf, (1220, 100))
 
-        if (game_state == 200):
-            # Nuclear plant
-            nuclear_image = i.nuclear_image.copy()
-            nuclear_image.fill((255, 255, 255, 128))
-            screen.blit(nuclear_image, r.nuclear_rect)
-        elif (game_state == 201):
-            nuclear_image = i.nuclear_image
-            #nuclear_image.fill((0, 0, 0))
-            screen.blit(i.nuclear_image, r.nuclear_rect)
-    
-
-
+    elif game_state in range(200, 300):  # tutorial 2
+        pass
     elif game_state in range(300, 400):  # tutorial 3
         pass
     elif game_state in range(400, 500):  # tutorial 4
