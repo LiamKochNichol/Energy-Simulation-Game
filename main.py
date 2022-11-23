@@ -4,6 +4,7 @@ import select_step as s
 import images as i
 import rects as r
 from sys import exit
+from map import map, choose_image, choose_rect
 
 pygame.init()
 pygame.font.init()
@@ -27,6 +28,9 @@ drag_start = 0
 gen_set = [0, 0]
 # section end -------------------------------------------------------------------------------
 
+# Initialize variable to select which area is being changed
+current_area = 'area_1'
+
 while True:  # Main Loop
     #  power flow computation start
     pass
@@ -38,7 +42,10 @@ while True:  # Main Loop
             pygame.quit()
             exit()
 
-        game_state = s.select_step(event, game_state)
+        step_select = s.select_step(event, game_state, map, current_area)
+        game_state = step_select[0]
+        map = step_select[1]
+        current_area = step_select[2]
 
         if is_slider:
             for k in range(0,len(r.r_slider_list)):
@@ -59,7 +66,9 @@ while True:  # Main Loop
         screen.blit(i.title, (200, 100))
         screen.blit(i.button_start, r.r_button_start)
 
+        
     elif game_state in range(100, 200):  # tutorial 1
+
         screen.fill((255, 255, 255))
         screen.blit(i.bg_10, (0, 0))
         screen.blit(i.button_next, r.r_button_next)
@@ -96,18 +105,35 @@ while True:  # Main Loop
             screen.blit(time_surf, (1220, 100))
 
     elif game_state in range(200, 300):  # tutorial 2
-        screen.fill((255, 255, 255))
-        screen.blit(i.bg_20, (0,0))
 
         if (game_state == 200):
-            # Nuclear plant
-            nuclear_image = i.nuclear_image.copy()
-            nuclear_image.fill((255, 255, 255, 128))
-            screen.blit(nuclear_image, r.nuclear_rect)
-        elif (game_state == 201):
-            nuclear_image = i.nuclear_image
-            #nuclear_image.fill((0, 0, 0))
-            screen.blit(i.nuclear_image, r.nuclear_rect)
+            # Render new map every time
+            screen.fill((255, 255, 255))
+            screen.blit(i.bg_20, (0,0))
+
+            for plant in map:
+                plant_image = choose_image(map[plant]['type'])
+                plant_rect = choose_rect(plant)
+                screen.blit(plant_image, plant_rect)
+                
+
+        if (game_state == 201):
+            # Create sidebar
+            sidebar = pygame.Surface((300,screen_height))
+            sidebar.set_alpha(128)
+            sidebar.fill((255,255,255))
+            screen.blit(sidebar,(0,0))
+
+            screen.blit(i.plant_hydro, r.button_hydro)
+            screen.blit(i.plant_wind, r.button_wind)
+            screen.blit(i.plant_solar, r.button_solar)
+            screen.blit(i.plant_nuclear, r.button_nuclear)
+            screen.blit(i.plant_coal, r.button_coal)
+            screen.blit(i.plant_gas, r.button_gas)
+
+        elif (game_state == 202):
+            pass
+
     elif game_state in range(300, 400):  # tutorial 3
         pass
     elif game_state in range(400, 500):  # tutorial 4

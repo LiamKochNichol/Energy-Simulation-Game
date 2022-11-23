@@ -27,3 +27,16 @@ window_icon = pygame.image.load("sprites/window_icon.png")
 bg_20 = pygame.image.load("sprites/ontario_map.png")
 temp_nuclear = pygame.image.load("sprites/plant_nuclear.png")
 nuclear_image = pygame.transform.scale(temp_nuclear, (100,100))
+
+# Blank area
+blank_area = pygame.Surface((100,100))
+blank_area.set_alpha(128)
+blank_area.fill((255,255,255))
+
+# Other power plants
+plant_wind = pygame.transform.scale(pygame.image.load("sprites/plant_wind.png"), (100,100))
+plant_solar = pygame.transform.scale(pygame.image.load("sprites/plant_solar.png"), (100,100))
+plant_nuclear = pygame.transform.scale(pygame.image.load("sprites/plant_nuclear.png"), (100,100))
+plant_hydro = pygame.transform.scale(pygame.image.load("sprites/plant_hydro.png"), (100,100))
+plant_gas = pygame.transform.scale(pygame.image.load("sprites/plant_gas.png"), (100,100))
+plant_coal = pygame.transform.scale(pygame.image.load("sprites/plant_coal.png"), (100,100))
