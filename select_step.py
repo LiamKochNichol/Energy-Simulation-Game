@@ -7,6 +7,8 @@ def select_step(Event, Game_state):
     if Game_state in range(0, 100):
         if Event.type == pygame.MOUSEBUTTONUP and r.r_button_start.collidepoint(Event.pos):
             gs_out = 100
+        if Event.type == pygame.MOUSEBUTTONUP and r.r_title.collidepoint(Event.pos):
+            gs_out = -1
 
     elif Game_state in range(100, 200):
         if Game_state == 100:  # welcome text
