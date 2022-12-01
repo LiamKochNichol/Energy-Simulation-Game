@@ -7,4 +7,39 @@ text_101_c = 'which will display useful numbers and graphs from power flow simul
 
 text_102_a = 'Loads are modeled on the visual interface as a down pointing arrow. Loads in a system consume power. You can think of'
 text_102_b = 'loads as anything that requires power to run. Computers, houses, cities, factories are all examples of loads, the last two'
-text_102_c = 'around the scale of loads considered in transmission systems'
+text_102_c = 'around the scale of loads considered in transmission systems.'
+
+text_103_a = 'Generators are denoted by a G symbol on the visual interface. These represent conventional dispatchable generators such'
+text_103_b = 'as coal, oil, or natural gas plants which burn fuel to generate electricity while producing carbon emissions. Their outputs'
+text_103_c = 'can be controlled and adjusted on demand.'
+
+text_104_a = 'Connective elements give the means to transmit electricity across distances. Denoted in short, thick lines are buses,'
+text_104_b = 'points/nodes where generators and loads are connected. Linking the buses are transmission lines which carry power across'
+text_104_c = 'the system.'
+
+text_105_a = 'The concept of power balance is core to running an energy system. It states that the amount of power generated (supply)'
+text_105_b = 'must equal the amount consumed (demand) at all times.'
+
+text_106_a = 'The grid operates at a frequency of 50Hz (Europe) or 60Hz (US). This frequency must remain stable. If power supply'
+text_106_b = 'exceeds demand, the frequency rises, and power plants disconnect themselves from the system to avoid failure.'
+
+text_107_a = 'If power demand exceeds supply, the frequency decreases. Rolling blackouts occur, where only some consumers have'
+text_107_b = 'power. If this continues, power plants will begin switching off, causing system-wide blackouts which are very difficult to'
+text_107_c = 'recover from.'
+
+text_108_a = 'The numbers next to the generators and loads show their current power values in megawatts [MW], which is the unit'
+text_108_b = 'commonly used in utility-scale systems. The large number in red shows the power imbalance that is currently in the'
+text_108_c = 'system.'
+
+text_109_a = 'Now it\'s your turn! The sliders control the two generators in the system, each of which has a maximum capacity of'
+text_109_b = '100MW. Adjust the sliders such that the net power imbalance in zero. When you are ready, click Run!'
+
+text_110_a = 'You ran your system without balancing the power first! The system suffered a blackout. Remember, always keep your'
+text_110_b = 'system in balance. The imbalance number will turn green when this is achieved. When you are ready, click the Retry'
+text_110_c = 'button and try again.'
+
+text_111_a = 'Success! Sufficient power has been delivered to the consumer. The power flows of each line are now shown. The path of'
+text_111_b = 'energy depends on properties of the transmission line. We will discuss this in much more detail in a following module.'
+
+text_112_a = 'Congratulations, you have completed module one of the game. You should now be familiar with power balance and basic'
+text_112_b = 'power system diagrams. In the next modules we will build upon this system with additional details and considerations.'

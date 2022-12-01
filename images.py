@@ -4,12 +4,17 @@ bg_00 = pygame.image.load("sprites/bg_0.jpg")
 title = pygame.image.load("sprites/name_title.png")
 
 bg_10 = pygame.image.load("sprites/bg_1.png")
-mask_tut1_3 = pygame.image.load("sprites/mask_tut1_3.png")
-mask_tut1_3.set_alpha(155)
+mask_blackout = pygame.image.load("sprites/mask_blackout.png")
+mask_blackout.set_alpha(155)
 fg_10 = pygame.image.load("sprites/fg_1.png")
 
 button_start = pygame.image.load("sprites/button_start.png")
 button_next = pygame.image.load("sprites/button_next.png")
+button_run = pygame.image.load("sprites/button_run.png")
+button_retry1 = pygame.image.load("sprites/button_retry_1.png")
+button_retry2 = pygame.image.load("sprites/button_retry_2.png")
+
+# Tutorial 1 assets
 slider_tut1 = pygame.image.load("sprites/slider_tut_1.png")
 slider_tut2 = pygame.image.load("sprites/slider_tut_1.png")
 slider_tut_tab1 = pygame.image.load("sprites/slider_tut_tab_1.png")
@@ -18,6 +23,12 @@ notice_101_a = pygame.image.load("sprites/notice_101_a.png")
 notice_101_b = pygame.image.load("sprites/notice_101_b.png")
 load_tut1 = pygame.image.load("sprites/load_tut1.png")
 load_tut1.set_colorkey((255, 255, 255))
+gen1_tut1 = pygame.image.load("sprites/gen_c_tut1.png")
+gen1_tut1.set_colorkey((255, 255, 255))
+gen2_tut1 = pygame.image.load("sprites/gen_c_tut1.png")
+gen2_tut1.set_colorkey((255, 255, 255))
+system_tut1 = pygame.image.load("sprites/system_tut1.png")
+system_tut1.set_colorkey((255, 255, 255))
 
 button_run = pygame.image.load("sprites/button_run.png")
 

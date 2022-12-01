@@ -3,10 +3,10 @@ import rects as r
 
 
 
-def select_step(Event, Game_state, map, current_area):
+def select_step(Event, Game_state, map, current_area, is_pf_success):
     gs_out = Game_state
     clicked_rect = 0
-    if Game_state in range(0, 100):
+    if Game_state in range(0, 100): # title screen
         if Event.type == pygame.MOUSEBUTTONUP and r.r_button_start.collidepoint(Event.pos):
             gs_out = 100
         if Event.type == pygame.MOUSEBUTTONUP and r.r_title.collidepoint(Event.pos):
@@ -17,25 +17,64 @@ def select_step(Event, Game_state, map, current_area):
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 101
 
-        if Game_state == 101:  # welcome text
+        if Game_state == 101:  # UI description
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 102
 
-        if Game_state == 102:  # welcome text
+        if Game_state == 102:  # Load description
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 103
 
-        if Game_state == 103:  # welcome text
+        if Game_state == 103:  # Generator description
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 104
 
-        if Game_state == 104:  # welcome text
+        if Game_state == 104:  # System description
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 105
 
-        if Game_state == 105:  # welcome text
+        if Game_state == 105:  # Power balance
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
-                gs_out = 200
+                gs_out = 106
+
+        if Game_state == 106:  # Frequency and overload
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 107
+
+        if Game_state == 107:  # Under-load
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 108
+
+        if Game_state == 108:  # Display values
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 109
+
+        if Game_state == 109:  # Move sliders
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                if is_pf_success == False:
+                    gs_out = 110
+                elif is_pf_success == True:
+                    gs_out = 111
+
+        if Game_state == 110:  # PF failure
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 109
+
+        if Game_state == 111:  # PF success
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 112
+
+        if Game_state == 112:  # Recap
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 113
+
+        if Game_state == 113:  # Onto the next module
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 114
+
+        if Game_state == 114:  # welcome text
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
+                gs_out = 100
 
     elif Game_state in range(200, 300): 
         if Game_state == 200:
