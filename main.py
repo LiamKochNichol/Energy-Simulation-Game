@@ -15,8 +15,8 @@ print(pygame.font.get_fonts())
 # setting game --------------------------------------------------------------------------
 
 # loading assets ------------------------------------------------------------------------
-screen_width = 1700
-screen_height = 900
+screen_width = 1920
+screen_height = 1080
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
 pygame.display.set_caption("Capstone Game")  # name that appears on window
 pygame.display.set_icon(i.window_icon) # Set window icon to wind turbines
