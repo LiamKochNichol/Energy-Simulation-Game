@@ -43,3 +43,40 @@ text_111_b = 'energy depends on properties of the transmission line. We will dis
 
 text_112_a = 'Congratulations, you have completed module one of the game. You should now be familiar with power balance and basic'
 text_112_b = 'power system diagrams. In the next modules we will build upon this system with additional details and considerations.'
+
+text_200_a = 'Welcome to level 2 of “Energy Simulation Game”! We will begin adding complexity to the basic system introduced in'
+text_200_b = 'module 1.'
+text_200_c = ''
+
+text_201_a = 'Last time, we adjusted two generator to supply the load and achieved power balance. You were able to split the 150MW'
+text_201_b = 'demand however you wanted between the two generators. In reality, utilities must consider the cost of energy when'
+text_201_c = 'planning generator dispatch.'
+
+text_202_a = 'The cost of power depends a variety of factors. Some factors include the type of energy source, location, capital and'
+text_202_b = 'maintenance costs, life cycle, and market rates.'
+
+text_203_a = 'The problem of “Economic Dispatch” seeks to find how much each generator should provide to satisfy demand'
+text_203_b = 'while keeping costs at a minimum.'
+
+text_204_a = 'Optimizing a large system can be very complex and is done by sophisticated programs and techniques. The problem also'
+text_204_b = 'needs to be solved frequently since the system’s state changes in real time. In our case we will stick to this simple system.'
+
+text_205_a = 'Costs of power are now displayed above each generator. Your tasks will be to minimize cost while maintaining power'
+text_205_b = 'balance! Move the sliders around to adjust generator output and click the Run button when you are ready.'
+
+text_206_a = 'You ran your system without balancing the power first! The system suffered a blackout. Remember, always keep your'
+text_206_b = 'system in balance. When you are ready, click the Retry button and try again.'
+
+text_207_a = 'Your configuration balances the load, but isn’t the most cost-efficient… Click the retry button and try again.'
+
+text_208_a = 'Success! You used the least amount of costs while delivering power to the consumer. Of course, The problem isn’t as'
+text_208_b = 'simple as always maximizing your cheapest generators. We will discuss this in more detail in the next module.'
+
+text_209_a = 'Economic dispatch isn’t the only problem to consider cost. Since starting up generators have a cost too,'
+text_209_b = '“Unit Commitment” decides which generator should turn on at any time. To avoid being too confusing, we will focus on'
+text_209_c = 'economic dispatch moving forward.'
+
+text_210_a = 'Congratulations, you have complete module two of the game. You should now understand the problem of economic'
+text_210_b = 'dispatch, and the factors that goes into minimizing the cost of power systems operation. The next module will discuss'
+text_210_c = 'transmission lines in more detail.'
+
