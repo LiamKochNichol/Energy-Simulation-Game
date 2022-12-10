@@ -47,17 +47,17 @@ nuclear_rect.center = (100,100)
 
 # Sidebar buttons
 button_hydro = i.plant_hydro_button.get_rect()
-button_hydro.center = (100,100)
+button_hydro.center = (100,190)
 button_wind = i.plant_wind_button.get_rect()
-button_wind.center = (100,210)
+button_wind.center = (100,340)
 button_solar = i.plant_solar_button.get_rect()
-button_solar.center = (100,320)
+button_solar.center = (100,490)
 button_nuclear = i.plant_nuclear_button.get_rect()
-button_nuclear.center = (100,430)
+button_nuclear.center = (100,640)
 button_coal = i.plant_coal_button.get_rect()
-button_coal.center = (100,540)
+button_coal.center = (100,790)
 button_gas = i.plant_gas_button.get_rect()
-button_gas.center = (100,650)
+button_gas.center = (100,940)
 
 
 # Initialize Generators and Loads

@@ -574,16 +574,57 @@ while True:  # Main Loop
 
         if game_state == 601:
             # Create sidebar
-            sidebar = pygame.Surface((300, screen_height))
+            sidebar = pygame.Surface((375, screen_height))
             sidebar.set_alpha(128)
             sidebar.fill((255, 255, 255))
             screen.blit(sidebar, (0, 0))
 
+            text_hydro_title = font_text.render(t.text_hydro_title, False, (0, 0, 0))
+            screen.blit(text_hydro_title, (50,110))
+            text_hydro_cost = font_text.render(t.text_hydro_cost, False, (0, 0, 0))
+            screen.blit(text_hydro_cost, (175,150))
+            text_hydro_emissions = font_text.render(t.text_hydro_emissions, False, (0, 0, 0))
+            screen.blit(text_hydro_emissions, (175,190))
             screen.blit(i.plant_hydro_button, r.button_hydro)
+
+            text_wind_title = font_text.render(t.text_wind_title, False, (0, 0, 0))
+            screen.blit(text_wind_title, (50,260))
+            text_wind_cost = font_text.render(t.text_wind_cost, False, (0, 0, 0))
+            screen.blit(text_wind_cost, (175,300))
+            text_wind_emissions = font_text.render(t.text_wind_emissions, False, (0, 0, 0))
+            screen.blit(text_wind_emissions, (175,340))
             screen.blit(i.plant_wind_button, r.button_wind)
+
+            text_solar_title = font_text.render(t.text_solar_title, False, (0, 0, 0))
+            screen.blit(text_solar_title, (50,410))
+            text_solar_cost = font_text.render(t.text_solar_cost, False, (0, 0, 0))
+            screen.blit(text_solar_cost, (175,450))
+            text_solar_emissions = font_text.render(t.text_solar_emissions, False, (0, 0, 0))
+            screen.blit(text_solar_emissions, (175,490))
             screen.blit(i.plant_solar_button, r.button_solar)
+
+            text_nuclear_title = font_text.render(t.text_nuclear_title, False, (0, 0, 0))
+            screen.blit(text_nuclear_title, (50,560))
+            text_nuclear_cost = font_text.render(t.text_nuclear_cost, False, (0, 0, 0))
+            screen.blit(text_nuclear_cost, (175,600))
+            text_nuclear_emissions = font_text.render(t.text_nuclear_emissions, False, (0, 0, 0))
+            screen.blit(text_nuclear_emissions, (175,640))
             screen.blit(i.plant_nuclear_button, r.button_nuclear)
+
+            text_coal_title = font_text.render(t.text_coal_title, False, (0, 0, 0))
+            screen.blit(text_coal_title, (50,710))
+            text_coal_cost = font_text.render(t.text_coal_cost, False, (0, 0, 0))
+            screen.blit(text_coal_cost, (175,750))
+            text_coal_emissions = font_text.render(t.text_coal_emissions, False, (0, 0, 0))
+            screen.blit(text_coal_emissions, (175,790))
             screen.blit(i.plant_coal_button, r.button_coal)
+
+            text_gas_title = font_text.render(t.text_gas_title, False, (0, 0, 0))
+            screen.blit(text_gas_title, (50,860))
+            text_gas_cost = font_text.render(t.text_gas_cost, False, (0, 0, 0))
+            screen.blit(text_gas_cost, (175,900))
+            text_gas_emissions = font_text.render(t.text_gas_emissions, False, (0, 0, 0))
+            screen.blit(text_gas_emissions, (175,940))
             screen.blit(i.plant_gas_button, r.button_gas)
 
         elif game_state == 602:

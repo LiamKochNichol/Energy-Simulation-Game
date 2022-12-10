@@ -80,3 +80,28 @@ text_210_a = 'Congratulations, you have complete module two of the game. You sho
 text_210_b = 'dispatch, and the factors that goes into minimizing the cost of power systems operation. The next module will discuss'
 text_210_c = 'transmission lines in more detail.'
 
+
+
+text_hydro_title = 'Hydro'
+text_hydro_cost = '$10/MW'
+text_hydro_emissions = '10 tCO2e/MW'
+
+text_wind_title = 'Wind'
+text_wind_cost = '$10/MW'
+text_wind_emissions = '10 tCO2e/MW'
+
+text_solar_title = 'Solar'
+text_solar_cost = '$10/MW'
+text_solar_emissions = '10 tCO2e/MW'
+
+text_nuclear_title = 'Nuclear'
+text_nuclear_cost = '$10/MW'
+text_nuclear_emissions = '10 tCO2e/MW'
+
+text_coal_title = 'Coal'
+text_coal_cost = '$10/MW'
+text_coal_emissions = '10 tCO2e/MW'
+
+text_gas_title = 'Gas'
+text_gas_cost = '$10/MW'
+text_gas_emissions = '10 tCO2e/MW'
