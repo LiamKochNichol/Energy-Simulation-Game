@@ -147,6 +147,46 @@ def select_step(Event, Game_state, map, current_area, is_pf_success):
             elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_2.collidepoint(Event.pos):
                 gs_out = 601
                 current_area = 'area_2'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_3.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_3'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_4.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_4'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_5.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_5'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_6.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_6'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_7.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_7'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_8.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_8'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_9.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_9'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_10.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_10'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_11.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_11'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_12.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_12'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_13.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_13'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_14.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_14'
+            elif Event.type == pygame.MOUSEBUTTONDOWN and r.area_15.collidepoint(Event.pos):
+                gs_out = 601
+                current_area = 'area_15'
+            
 
         # Change the area to whatever button is pressed
         elif Game_state == 601:

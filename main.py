@@ -6,7 +6,7 @@ import rects as r
 import text as t
 import panda_power as p
 from sys import exit
-from map import map, choose_image, choose_rect
+from map import map, loads, choose_image, choose_rect
 
 pygame.init()
 pygame.font.init()
@@ -568,6 +568,9 @@ while True:  # Main Loop
                 plant_image = choose_image(map[plant]['type'])
                 plant_rect = choose_rect(plant)
                 screen.blit(plant_image, plant_rect)
+            
+            for load in loads:
+                screen.blit(loads[load]['image'], loads[load]['rect'])
 
         if game_state == 601:
             # Create sidebar
@@ -576,12 +579,12 @@ while True:  # Main Loop
             sidebar.fill((255, 255, 255))
             screen.blit(sidebar, (0, 0))
 
-            screen.blit(i.plant_hydro, r.button_hydro)
-            screen.blit(i.plant_wind, r.button_wind)
-            screen.blit(i.plant_solar, r.button_solar)
-            screen.blit(i.plant_nuclear, r.button_nuclear)
-            screen.blit(i.plant_coal, r.button_coal)
-            screen.blit(i.plant_gas, r.button_gas)
+            screen.blit(i.plant_hydro_button, r.button_hydro)
+            screen.blit(i.plant_wind_button, r.button_wind)
+            screen.blit(i.plant_solar_button, r.button_solar)
+            screen.blit(i.plant_nuclear_button, r.button_nuclear)
+            screen.blit(i.plant_coal_button, r.button_coal)
+            screen.blit(i.plant_gas_button, r.button_gas)
 
         elif game_state == 602:
             pass
