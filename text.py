@@ -80,7 +80,86 @@ text_210_a = 'Congratulations, you have complete module two of the game. You sho
 text_210_b = 'dispatch, and the factors that goes into minimizing the cost of power systems operation. The next module will discuss'
 text_210_c = 'transmission lines in more detail.'
 
+text_300_a="Welcome to module 3 of “Energy Simulation Game”! In the section we will examine"
+text_300_b="transmission lines in more detail."
 
+text_301_a="You may be used to electricity flowing through a wire to a load and back to the source,"
+text_301_b="but transmission lines actually often use three wires! This is called a three-phase power."
+text_301_c="It is used because it can transmit more power for the same amount of material."
+
+text_302_a="You have seen resistors in circuits with a ‘resistance’ property. In fact, electrical"
+text_302_b="resistance exists in all materials, even conductors like wires. Normally the impacts are"
+text_302_c="small, but in long transmission lines that connect cities and provinces the effects add up."
+
+text_303_a="Transmission lines also have a property called ‘inductance’, like inductors from circuits"
+text_303_b="Inductance is a property that opposes the change in current of a conductor and arises"
+text_303_c="because the transmission wires interact with each other. In power systems their effects"
+text_303_d="are much greater than resistance."
+
+text_304_a="Both the resistance and inductance of a transmission line depend on the material and "
+text_304_b="the length of the line. They can be approximated by a resistor and inductor, like those "
+text_304_c="you saw in circuits."
+
+text_305_a="We did not take resistance into account in the past modules. In reality, some power is"
+text_305_b="lost in transmission. To supply 150MW to the load, the generators must supply a bit"
+text_305_c="more than 150MW to account for the line power losses!"
+
+text_306_a="Here is what the solution to module 2 would have looked like if there was resistance in"
+text_306_b="the lines. Note that more power (and minimal cost) is needed to run the system."
+
+text_307_a="If we want to be super accurate, we should account for line resistance. However, in"
+text_307_b="some applications it is ignored since it simplifies the problem, and their effects"
+text_307_c="are small. We will ignore resistance in these modules, but remember that it exists!"
+
+text_308_a="You may have wondered how the power flow in each line was calculated in the previous"
+text_308_b="modules. We did not show the line inductances back then. Here they are now. Notice"
+text_308_c="that more power flows through lines with a smaller inductance, and vice versa."
+
+text_309_a="Take a look at the following system. Which line will have the most amount of power"
+text_309_b="flowing through it? Click on your answer."
+
+text_310_a="That was not the correct answer. Please try again."
+
+text_311_a="Correct!"
+
+text_312_a="Just like smaller wires, transmission lines can only allows so much power to flow"
+text_312_b="through at any time. They will burn down and fail if power flow exceeds their maximum,"
+text_312_c="or their ‘ratings’."
+
+text_313_a="This imposes another constraint to the power flow problem. In addition to power balance"
+text_313_b="and economic dispatch, utilities must be wary to not violate the ratings of any "
+text_313_c="transmission line!"
+
+text_314_a="Line ratings are now displayed next to each line. The predicted power flow in each line"
+text_314_b="will also be updated as you move the sliders. Additional information have been added to "
+text_314_c="the information screen."
+
+text_315_a="Your goal is to minimize cost while satisfying power balance and line limits! Good luck!"
+
+text_316_a="You didn’t maintain power balance! Even with all these other considerations, the priority"
+text_316_b="should be to supply the correct total power to the system. Click Retry to try again."
+
+text_317_a="A transmission line was overloaded by your dispatch! This caused it to be unusable in "
+text_317_b="the system, making it impossible to safely supply power to the load. Click on Retry to try"
+text_317_c="again."
+
+text_318_a="Good job on satisfying power balance and keeping flows within line limits! However, this"
+text_318_b="isn’t the most cost-effective dispatch. Can you find a configuration that satisfies "
+text_318_c="constraints while minimizing cost? Click Retry to try again."
+
+text_319_a="Well done! You found the minimum cost dispatch while satisfying the system constraints."
+text_319_b="As you may tell, There are a lot of factors to consider when running a power grid!"
+
+text_320_a="Congratulations, you have completed module 3. Through these 3 modules, you have"
+text_320_b="learned the basics of power systems operation. We will next introduce renewable energy"
+text_320_c="to show their benefits and limitations."
+
+text_321_a="Line ratings are now displayed next to each line. The predicted power flow in each line"
+text_321_b="will also be updated as you move the sliders. Additional information have been added to"
+text_321_c="the information screen."
+
+text_323_a="Good job on satisfying power balance! Let's check if the line limits are respected."
+text_323_b="Click on the Next button."
 
 text_hydro_title = 'Hydro'
 text_hydro_cost = '$10/MW'

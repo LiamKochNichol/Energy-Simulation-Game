@@ -41,6 +41,10 @@ r_blank_textbox = i.blank_textbox.get_rect(center=(960, 540))
 r_next_module = i.next_module.get_rect(midtop=(960, 400))
 r_back_to_title = i.back_to_title.get_rect(midtop=(960, 560))
 
+#tutorial 3
+r_line_1_2=i.choose_1.get_rect(center=(750,250))
+r_line_1_3=i.choose_2.get_rect(center=(200,450))
+r_line_2_3=i.choose_3.get_rect(center=(1250,450))
 # Nuclear power plant rect
 nuclear_rect = i.nuclear_image.get_rect()
 nuclear_rect.center = (100,100)
@@ -59,7 +63,6 @@ button_coal.center = (100,790)
 button_gas = i.plant_gas_button.get_rect()
 button_gas.center = (100,940)
 
-
 # Initialize Generators and Loads
 # Toronto
 toronto = i.toronto.get_rect()
@@ -73,7 +76,6 @@ windsor.center = (500,1000)
 # Sudbury
 sudbury = i.sudbury.get_rect()
 sudbury.center = (825,100)
-
 # Sir Adam Beck (hydro)
 area_1 = i.blank_area.get_rect()
 area_1.center = (1150,825)
