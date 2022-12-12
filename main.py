@@ -6,7 +6,7 @@ import rects as r
 import text as t
 import panda_power as p
 from sys import exit
-from map import map, loads, choose_image, choose_rect
+from map import map, choose_image, choose_rect
 
 pygame.init()
 pygame.font.init()
@@ -83,6 +83,14 @@ while True:  # Main Loop
             line_flows = p.PF_tut1(gen_set)
         elif game_state == 208 and pf_done != 1:
             line_flows = p.PF_tut1(gen_set)
+        elif game_state==306 and pf_done !=1:
+            line_flows = p.PF_tut3([100,50],load_val)[0]
+            line_ratings = p.PF_tut3([100,50],load_val)[1]
+            pf_balance=p.PF_tut3_loss([100,50])[2]
+        elif game_state==323 and pf_done !=1:
+            line_flows = p.PF_tut3(gen_set,load_val)[0]
+            line_ratings = p.PF_tut3(gen_set,load_val)[1]
+        
 
     #  event loop end
 
@@ -343,8 +351,8 @@ while True:  # Main Loop
         screen.fill((255, 255, 255))
         screen.blit(i.bg_10, (0, 0))
         screen.blit(i.fg_10, (0, 0))
-        screen.blit(i.button_next.convert_alpha(), r.r_button_next)
         screen.blit(i.system_tut1, r.r_system_tut1)
+        screen.blit(i.button_next.convert_alpha(), r.r_button_next)
 
         if game_state == 200:
             text_surf = font_text.render(t.text_200_a, False, (0, 0, 0))
@@ -553,7 +561,358 @@ while True:  # Main Loop
             gen_set = [0, 0]
 
     elif game_state in range(300, 400):  # tutorial 3
-        pass
+
+        screen.fill((255, 255, 255))
+        screen.blit(i.bg_10, (0, 0))
+        screen.blit(i.fg_10, (0, 0))
+        screen.blit(i.button_next.convert_alpha(), r.r_button_next)
+        screen.blit(i.system_tut1, r.r_system_tut1)
+
+        if game_state==300:
+            text_surf = font_text.render(t.text_300_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_300_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+        elif game_state==301:
+            text_surf = font_text.render(t.text_301_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_301_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_301_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+        elif game_state==302:
+            text_surf = font_text.render(t.text_302_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_302_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_302_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+        elif game_state==303:
+            text_surf = font_text.render(t.text_303_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_303_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_303_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+        elif game_state==304:
+            text_surf = font_text.render(t.text_304_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_304_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_304_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+        elif game_state==305:
+            text_surf = font_text.render(t.text_305_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_305_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_305_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+        elif game_state==306:
+            pf_done=1
+            text_surf = font_text.render(t.text_306_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_306_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+
+            load_surf = font_labels.render(str(pf_balance) + "MW", False, (0, 0, 0,))
+            screen.blit(load_surf, (720, 750))
+            gen1_surf = font_labels.render(str(100) + "MW", False, (0, 0, 0))
+            screen.blit(gen1_surf, (412, 150))
+            gen2_surf = font_labels.render(str(50) + "MW", False, (0, 0, 0))
+            screen.blit(gen2_surf, (1012, 150))
+
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+
+            load_surf = font_text.render(str(round(line_flows[0], 1)), False, (0, 0, 0,))
+            screen.blit(load_surf, (1820, 370))
+            gen1_surf = font_text.render(str(round(line_flows[2], 1)), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1820, 415))
+            gen2_surf = font_text.render(str(round(line_flows[1], 1)), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1820, 460))
+
+            line_surf = font_labels.render(str(round(line_flows[0], 1)) + "MW", False, (0, 0, 0,))
+            screen.blit(line_surf, (700, 320))
+            line_surf = font_labels.render(str(round(line_flows[1], 1)) + "MW", False, (0, 0, 0))
+            screen.blit(line_surf, (1100, 450))
+            line_surf = font_labels.render(str(round(line_flows[2], 1)) + "MW", False, (0, 0, 0))
+            screen.blit(line_surf, (260, 450))
+        elif game_state==307:
+            pf_done=0
+            text_surf = font_text.render(t.text_307_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_307_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_307_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            load_surf = font_text.render(str(round(line_flows[0], 1)), False, (0, 0, 0,))
+            screen.blit(load_surf, (1820, 370))
+            gen1_surf = font_text.render(str(round(line_flows[2], 1)), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1820, 415))
+            gen2_surf = font_text.render(str(round(line_flows[1], 1)), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1820, 460))
+
+        elif game_state==308:
+            text_surf = font_text.render(t.text_308_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_308_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_308_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+
+            line_surf = font_labels.render(str('0.001+j0.006') + "p.u.", False, (0, 0, 0,))
+            screen.blit(line_surf, (650, 320))
+            line_surf = font_labels.render(str('0.003+j0.012') + "p.u.", False, (0, 0, 0))
+            screen.blit(line_surf, (1100, 450))
+            line_surf = font_labels.render(str('0.004+j0.018') + "p.u.", False, (0, 0, 0))
+            screen.blit(line_surf, (150, 450))
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            load_surf = font_text.render(str(round(line_flows[0], 1)), False, (0, 0, 0,))
+            screen.blit(load_surf, (1820, 370))
+            gen1_surf = font_text.render(str(round(line_flows[2], 1)), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1820, 415))
+            gen2_surf = font_text.render(str(round(line_flows[1], 1)), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1820, 460))
+
+        elif game_state==309:
+            text_surf = font_text.render(t.text_309_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_309_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            screen.blit(i.choose_1, r.r_line_1_2)
+            screen.blit(i.choose_2, r.r_line_1_3)
+            screen.blit(i.choose_3, r.r_line_2_3)
+            
+        elif game_state==310:
+            text_surf = font_text.render(t.text_310_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+        elif game_state==311:
+            text_surf = font_text.render(t.text_311_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+        elif game_state==312:
+            text_surf = font_text.render(t.text_312_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_312_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_312_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+        elif game_state==313:
+            text_surf = font_text.render(t.text_313_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_313_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_313_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+        elif game_state==314:
+            text_surf = font_text.render(t.text_314_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_314_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_314_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            line_surf = font_labels.render(str('250') + "A", False, (0, 0, 0,))
+            screen.blit(line_surf, (700, 320))
+            line_surf = font_labels.render(str('250') + "A", False, (0, 0, 0))
+            screen.blit(line_surf, (1100, 450))
+            line_surf = font_labels.render(str('250') + "A", False, (0, 0, 0))
+            screen.blit(line_surf, (300, 450))
+        elif game_state==315:
+            pf_done=0
+            text_surf = font_text.render(t.text_315_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            screen.blit(i.button_run.convert_alpha(), r.r_button_run)
+            is_slider = 1
+            screen.blit(i.slider_tut1, r.r_slider_tut1)
+            screen.blit(i.slider_tut2, r.r_slider_tut2)
+            r.r_slider_tut_tab1.move_ip((slider_move[0], 0))
+            r.r_slider_tut_tab2.move_ip((slider_move[1], 0))
+
+            screen.blit(i.slider_tut_tab1, r.r_slider_tut_tab1)
+            screen.blit(i.slider_tut_tab2, r.r_slider_tut_tab2)
+            slider_move = [0, 0]
+
+            load_surf = font_labels.render(str(load_val) + "MW", False, (0, 0, 0,))
+            screen.blit(load_surf, (720, 750))
+            gen1_surf = font_labels.render(str(gen_set[0]) + "MW", False, (0, 0, 0))
+            screen.blit(gen1_surf, (412, 150))
+            gen2_surf = font_labels.render(str(gen_set[1]) + "MW", False, (0, 0, 0))
+            screen.blit(gen2_surf, (1012, 150))
+
+            line_surf = font_labels.render(str('250') + "A", False, (0, 0, 0,))
+            screen.blit(line_surf, (700, 320))
+            line_surf = font_labels.render(str('250') + "A", False, (0, 0, 0))
+            screen.blit(line_surf, (1100, 450))
+            line_surf = font_labels.render(str('250') + "A", False, (0, 0, 0))
+            screen.blit(line_surf, (300, 450))
+
+            gen1cost_surf = font_labels.render("$" + str(gen_cost[0]) + "/MW", False, (0, 0, 0))
+            screen.blit(gen1cost_surf, (412, 100))
+            gen2cost_surf = font_labels.render("$" + str(gen_cost[1]) + "/MW", False, (0, 0, 0))
+            screen.blit(gen2cost_surf, (1012, 100))
+
+            cost_total = round(gen_set[0] * gen_cost[0] + gen_set[1] * gen_cost[1], 1)
+            cost_surf = font_info.render("$" + str(cost_total), False, (0, 0, 0))
+            screen.blit(cost_surf, r.r_cost)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            p_imbalance = round(gen_set[0] + gen_set[1] - load_val, 1)
+            if p_imbalance == 0:
+                p_imbalance_color = (0, 255, 0)
+                is_pf_success = 2
+            else:
+                p_imbalance_color = (255, 0, 0)
+                is_pf_success = 0
+            p_imbalance_surf = font_info.render(str(p_imbalance) + "MW", False, p_imbalance_color)
+            screen.blit(p_imbalance_surf, r.r_p_imbalance)
+
+        elif game_state==323:
+            text_surf = font_text.render(t.text_323_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_323_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            pf_done=1
+            if float(line_ratings[0])>100 or float(line_ratings[1])>100 or float(line_ratings[2])>100:
+                is_pf_success = 3
+            else:
+                is_pf_success = 4
+        elif game_state==316:
+            text_surf = font_text.render(t.text_316_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_316_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+        elif game_state==317:
+            text_surf = font_text.render(t.text_317_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_317_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_317_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            load_surf = font_text.render(str(round(line_flows[0], 1)), False, (0, 0, 0,))
+            screen.blit(load_surf, (1820, 370))
+            gen1_surf = font_text.render(str(round(line_flows[2], 1)), False, (250, 0, 0))
+            screen.blit(gen1_surf, (1820, 415))
+            gen2_surf = font_text.render(str(round(line_flows[1], 1)), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1820, 460))
+
+        elif game_state==318:
+            text_surf = font_text.render(t.text_318_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_318_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_318_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+        elif game_state==319:
+            text_surf = font_text.render(t.text_319_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_319_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+            load_surf = font_text.render(str(round(line_flows[0], 1)), False, (0, 0, 0,))
+            screen.blit(load_surf, (1820, 370))
+            gen1_surf = font_text.render(str(round(line_flows[2], 1)), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1820, 415))
+            gen2_surf = font_text.render(str(round(line_flows[1], 1)), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1820, 460))
+        elif game_state==320:
+            text_surf = font_text.render(t.text_320_a, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_top)
+            text_surf = font_text.render(t.text_320_b, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_mid)
+            text_surf = font_text.render(t.text_320_c, False, (0, 0, 0))
+            screen.blit(text_surf, textbox_bot)
+            load_surf = font_text.render(str('0.001+j0.006'), False, (0, 0, 0,))
+            screen.blit(load_surf, (1630, 370))
+            gen1_surf = font_text.render(str('0.003+j0.012'), False, (0, 0, 0))
+            screen.blit(gen1_surf, (1630, 415))
+            gen2_surf = font_text.render(str('0.004+j0.018'), False, (0, 0, 0))
+            screen.blit(gen2_surf, (1630, 460))
+
     elif game_state in range(400, 500):  # tutorial 4
         pass
     elif game_state in range(500, 600):  # game - daily
@@ -568,64 +927,20 @@ while True:  # Main Loop
                 plant_image = choose_image(map[plant]['type'])
                 plant_rect = choose_rect(plant)
                 screen.blit(plant_image, plant_rect)
-            
-            for load in loads:
-                screen.blit(loads[load]['image'], loads[load]['rect'])
 
         if game_state == 601:
             # Create sidebar
-            sidebar = pygame.Surface((375, screen_height))
+            sidebar = pygame.Surface((300, screen_height))
             sidebar.set_alpha(128)
             sidebar.fill((255, 255, 255))
             screen.blit(sidebar, (0, 0))
 
-            text_hydro_title = font_text.render(t.text_hydro_title, False, (0, 0, 0))
-            screen.blit(text_hydro_title, (50,110))
-            text_hydro_cost = font_text.render(t.text_hydro_cost, False, (0, 0, 0))
-            screen.blit(text_hydro_cost, (175,150))
-            text_hydro_emissions = font_text.render(t.text_hydro_emissions, False, (0, 0, 0))
-            screen.blit(text_hydro_emissions, (175,190))
-            screen.blit(i.plant_hydro_button, r.button_hydro)
-
-            text_wind_title = font_text.render(t.text_wind_title, False, (0, 0, 0))
-            screen.blit(text_wind_title, (50,260))
-            text_wind_cost = font_text.render(t.text_wind_cost, False, (0, 0, 0))
-            screen.blit(text_wind_cost, (175,300))
-            text_wind_emissions = font_text.render(t.text_wind_emissions, False, (0, 0, 0))
-            screen.blit(text_wind_emissions, (175,340))
-            screen.blit(i.plant_wind_button, r.button_wind)
-
-            text_solar_title = font_text.render(t.text_solar_title, False, (0, 0, 0))
-            screen.blit(text_solar_title, (50,410))
-            text_solar_cost = font_text.render(t.text_solar_cost, False, (0, 0, 0))
-            screen.blit(text_solar_cost, (175,450))
-            text_solar_emissions = font_text.render(t.text_solar_emissions, False, (0, 0, 0))
-            screen.blit(text_solar_emissions, (175,490))
-            screen.blit(i.plant_solar_button, r.button_solar)
-
-            text_nuclear_title = font_text.render(t.text_nuclear_title, False, (0, 0, 0))
-            screen.blit(text_nuclear_title, (50,560))
-            text_nuclear_cost = font_text.render(t.text_nuclear_cost, False, (0, 0, 0))
-            screen.blit(text_nuclear_cost, (175,600))
-            text_nuclear_emissions = font_text.render(t.text_nuclear_emissions, False, (0, 0, 0))
-            screen.blit(text_nuclear_emissions, (175,640))
-            screen.blit(i.plant_nuclear_button, r.button_nuclear)
-
-            text_coal_title = font_text.render(t.text_coal_title, False, (0, 0, 0))
-            screen.blit(text_coal_title, (50,710))
-            text_coal_cost = font_text.render(t.text_coal_cost, False, (0, 0, 0))
-            screen.blit(text_coal_cost, (175,750))
-            text_coal_emissions = font_text.render(t.text_coal_emissions, False, (0, 0, 0))
-            screen.blit(text_coal_emissions, (175,790))
-            screen.blit(i.plant_coal_button, r.button_coal)
-
-            text_gas_title = font_text.render(t.text_gas_title, False, (0, 0, 0))
-            screen.blit(text_gas_title, (50,860))
-            text_gas_cost = font_text.render(t.text_gas_cost, False, (0, 0, 0))
-            screen.blit(text_gas_cost, (175,900))
-            text_gas_emissions = font_text.render(t.text_gas_emissions, False, (0, 0, 0))
-            screen.blit(text_gas_emissions, (175,940))
-            screen.blit(i.plant_gas_button, r.button_gas)
+            screen.blit(i.plant_hydro, r.button_hydro)
+            screen.blit(i.plant_wind, r.button_wind)
+            screen.blit(i.plant_solar, r.button_solar)
+            screen.blit(i.plant_nuclear, r.button_nuclear)
+            screen.blit(i.plant_coal, r.button_coal)
+            screen.blit(i.plant_gas, r.button_gas)
 
         elif game_state == 602:
             pass
