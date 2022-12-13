@@ -167,10 +167,8 @@ def select_step(Event, Game_state, map, current_area, is_pf_success):
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 309
         if Game_state == 309:
-            if Event.type == pygame.MOUSEBUTTONUP and r.r_line_1_2.collidepoint(Event.pos):
+            if Event.type == pygame.MOUSEBUTTONUP and r.r_line_1_3.collidepoint(Event.pos):
                 gs_out = 311
-            elif Event.type == pygame.MOUSEBUTTONUP and r.r_line_1_3.collidepoint(Event.pos):
-                gs_out = 310
             elif Event.type == pygame.MOUSEBUTTONUP and r.r_line_2_3.collidepoint(Event.pos):
                 gs_out = 310
         if Game_state == 310:
@@ -193,9 +191,11 @@ def select_step(Event, Game_state, map, current_area, is_pf_success):
                 if is_pf_success == 0:
                     gs_out = 316
                 elif is_pf_success == 2:
-                    gs_out = 323
-                elif is_pf_success == 1:
-                    gs_out = 323
+                    gs_out = 319
+                elif is_pf_success == 3:
+                    gs_out = 317
+                elif is_pf_success == 4:
+                    gs_out = 318
         if Game_state == 316:
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 315
@@ -214,12 +214,6 @@ def select_step(Event, Game_state, map, current_area, is_pf_success):
         if Game_state == 321:
             if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):
                 gs_out = 0
-        if Game_state == 323:
-            if Event.type == pygame.MOUSEBUTTONUP and r.r_button_next.collidepoint(Event.pos):    
-                if is_pf_success == 3:
-                    gs_out = 317
-                elif is_pf_success == 4:
-                    gs_out = 319
     elif Game_state in range(600, 700):
         if Game_state == 600:
             if Event.type == pygame.MOUSEBUTTONDOWN and r.area_1.collidepoint(Event.pos):
