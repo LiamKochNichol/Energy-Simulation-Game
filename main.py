@@ -84,14 +84,8 @@ while True:  # Main Loop
         elif game_state == 208 and pf_done != 1:
             line_flows = p.PF_tut1(gen_set)
         elif game_state==306 and pf_done !=1:
-            line_flows = p.PF_tut3([100,50],load_val)[0]
-            line_ratings = p.PF_tut3([100,50],load_val)[1]
-            pf_balance=p.PF_tut3_loss([100,50])[2]
-        elif game_state==323 and pf_done !=1:
-            line_flows = p.PF_tut3(gen_set,load_val)[0]
-            line_ratings = p.PF_tut3(gen_set,load_val)[1]
-        
-
+            line_flows = p.PF_tut3_loss([50])[0]
+            line_ratings = p.PF_tut3_loss([50])[1]
     #  event loop end
 
     #  display and UI
@@ -615,9 +609,9 @@ while True:  # Main Loop
             text_surf = font_text.render(t.text_306_b, False, (0, 0, 0))
             screen.blit(text_surf, textbox_mid)
 
-            load_surf = font_labels.render(str(pf_balance) + "MW", False, (0, 0, 0,))
+            load_surf = font_labels.render(str(150) + "MW", False, (0, 0, 0,))
             screen.blit(load_surf, (720, 750))
-            gen1_surf = font_labels.render(str(100) + "MW", False, (0, 0, 0))
+            gen1_surf = font_labels.render(str(p.PF_tut3_loss([50])[2]) + "MW", False, (0, 0, 0))
             screen.blit(gen1_surf, (412, 150))
             gen2_surf = font_labels.render(str(50) + "MW", False, (0, 0, 0))
             screen.blit(gen2_surf, (1012, 150))
