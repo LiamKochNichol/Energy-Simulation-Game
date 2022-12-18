@@ -1,5 +1,5 @@
-text_100_a ='Welcome to “Energy Simulation Game”! In this game, you will learn about the implementation of renewable energy onto'
-text_100_b = 'a grid and the benefits and drawbacks of such solutions.'
+text_100_a ='Welcome to “A Greener Grid”! In this game, you will learn about the implementation of renewable energy onto a grid and'
+text_100_b = 'the benefits and drawbacks of such solutions.'
 
 text_101_a = 'The game interface contains 3 main layouts: this text box, which will guide you through the game and give'
 text_101_b = 'useful tooltips, the system screen, which will give you a representation of your network. and the informational screen,'
@@ -44,8 +44,8 @@ text_111_b = 'energy depends on properties of the transmission line. We will dis
 text_112_a = 'Congratulations, you have completed module one of the game. You should now be familiar with power balance and basic'
 text_112_b = 'power system diagrams. In the next modules we will build upon this system with additional details and considerations.'
 
-text_200_a = 'Welcome to level 2 of “Energy Simulation Game”! We will begin adding complexity to the basic system introduced in'
-text_200_b = 'module 1.'
+text_200_a = 'Welcome to level 2 of “A Greener Grid”! We will begin adding complexity to the basic system introduced in module 1.'
+text_200_b = ''
 text_200_c = ''
 
 text_201_a = 'Last time, we adjusted two generator to supply the load and achieved power balance. You were able to split the 150MW'
@@ -80,87 +80,201 @@ text_210_a = 'Congratulations, you have complete module two of the game. You sho
 text_210_b = 'dispatch, and the factors that goes into minimizing the cost of power systems operation. The next module will discuss'
 text_210_c = 'transmission lines in more detail.'
 
-text_300_a="Welcome to module 3 of “Energy Simulation Game”! In the section we will examine"
-text_300_b="transmission lines in more detail."
+text_300_a="Welcome to module 3 of “A Greener Grid”! In the section we will examine transmission lines in more detail."
+text_300_b=""
 
-text_301_a="You may be used to electricity flowing through a wire to a load and back to the source,"
-text_301_b="but transmission lines actually often use three wires! This is called a three-phase power."
-text_301_c="It is used because it can transmit more power for the same amount of material."
+text_301_a="You may be used to electricity flowing through a wire to a load and back to the source, but transmission lines"
+text_301_b="actually often use three wires! This is called a three-phase power. It is used because it can transmit more power for the"
+text_301_c="same amount of material."
 
-text_302_a="You have seen resistors in circuits with a ‘resistance’ property. In fact, electrical"
-text_302_b="resistance exists in all materials, even conductors like wires. Normally the impacts are"
-text_302_c="small, but in long transmission lines that connect cities and provinces the effects add up."
+text_302_a="You have seen resistors in circuits with a ‘resistance’ property. In fact, electrical resistance exists in all materials, even"
+text_302_b="conductors like wires. Normally the impacts are small, but in long transmission lines that connect cities and provinces the"
+text_302_c="effects can add up."
 
-text_303_a="Transmission lines also have a property called ‘inductance’, like inductors from circuits"
-text_303_b="Inductance is a property that opposes the change in current of a conductor and arises"
-text_303_c="because the transmission wires interact with each other. In power systems their effects"
-text_303_d="are much greater than resistance."
+text_303_a="Transmission lines also have a property called ‘inductance’, like inductors from circuits, Inductance is a property that"
+text_303_b="opposes the change in current of a conductor and arises because the transmission wires interact with each other. In power"
+text_303_c="systems their effects are much greater than resistance."
 
-text_304_a="Both the resistance and inductance of a transmission line depend on the material and "
-text_304_b="the length of the line. They can be approximated by a resistor and inductor, like those "
-text_304_c="you saw in circuits."
+text_304_a="Both the resistance and inductance of a transmission line depend on the material and the length of the line. They can be"
+text_304_b="approximated by a resistor and inductor, like those you saw in circuits."
+text_304_c=""
 
-text_305_a="We did not take resistance into account in the past modules. In reality, some power is"
-text_305_b="lost in transmission. To supply 150MW to the load, the generators must supply a bit"
-text_305_c="more than 150MW to account for the line power losses!"
+text_305_a="We did not take resistance into account in the past modules. In reality, some power is lost in transmission. To supply"
+text_305_b="150MW to the load, the generators must supply a bit more than 150MW to account for the line power losses!"
+text_305_c=""
 
-text_306_a="Here is what the solution to module 2 would have looked like if there was resistance in"
-text_306_b="the lines. Note that more power (and minimal cost) is needed to run the system."
+text_306_a="Here is what the solution to module 2 would have looked like if there was resistance in the lines. Note that more power"
+text_306_b="from the generators (151.7MW vs. 150MW) and a higher minimum cost ($1767 vs. $1750) are needed to run the system."
 
-text_307_a="If we want to be super accurate, we should account for line resistance. However, in"
-text_307_b="some applications it is ignored since it simplifies the problem, and their effects"
-text_307_c="are small. We will ignore resistance in these modules, but remember that it exists!"
+text_307_a="If we want to be super accurate, we should account for line resistance. However, in some applications it is ignored since"
+text_307_b="it simplifies the problem, and their effects are small. We will ignore resistance in these modules, but remember that it"
+text_307_c="exists!"
 
-text_308_a="You may have wondered how the power flow in each line was calculated in the previous"
-text_308_b="modules. We did not show the line inductances back then. Here they are now. Notice"
-text_308_c="that more power flows through lines with a smaller inductance, and vice versa."
+text_308_a="You may have wondered how the power flow in each line was calculated in the previous modules. We did not show the"
+text_308_b="line inductances back then. Here they are now. Notice that when the generators supply equal power, more power flows"
+text_308_c="through lines with a smaller inductance, and vice versa."
 
-text_309_a="Take a look at the following system. Which line will have the most amount of power"
-text_309_b="flowing through it? Click on your answer."
+text_309_a="Take a look at the following system. Which line will have the most amount of power flowing through it? Click on your"
+text_309_b="answer."
 
-text_310_a="That was not the correct answer. Please try again."
+text_310_a="That was not the correct answer. Please try again. The information on the right may help you."
 
-text_311_a="Correct!"
+text_311_a="You are correct!"
 
-text_312_a="Just like smaller wires, transmission lines can only allows so much power to flow"
-text_312_b="through at any time. They will burn down and fail if power flow exceeds their maximum,"
-text_312_c="or their ‘ratings’."
+text_312_a="Just like smaller wires, transmission lines can only allows so much power to flow through at any time. They will burn"
+text_312_b="down and fail if power flow exceeds their maximum, or their ‘ratings’."
+text_312_c=""
 
-text_313_a="This imposes another constraint to the power flow problem. In addition to power balance"
-text_313_b="and economic dispatch, utilities must be wary to not violate the ratings of any "
-text_313_c="transmission line!"
+text_313_a="This imposes another constraint to the power flow problem. In addition to power balance and economic dispatch, utilities"
+text_313_b="must be wary to not violate the ratings of any transmission line!"
+text_313_c=""
 
-text_314_a="Line ratings are now displayed next to each line. The predicted power flow in each line"
-text_314_b="will also be updated as you move the sliders. Additional information have been added to "
-text_314_c="the information screen."
+text_314_a="Line ratings are now displayed next to each line. The predicted power flow in each line will also be updated as you move"
+text_314_b="the sliders. Additional information have been added to the information screen."
+text_314_c=""
 
 text_315_a="Your goal is to minimize cost while satisfying power balance and line limits! Good luck!"
 
-text_316_a="You didn’t maintain power balance! Even with all these other considerations, the priority"
-text_316_b="should be to supply the correct total power to the system. Click Retry to try again."
+text_316_a="You didn’t maintain power balance! Even with all these other considerations, the priority should be to supply the correct"
+text_316_b="total power to the system. Click Retry to try again."
 
-text_317_a="A transmission line was overloaded by your dispatch! This caused it to be unusable in "
-text_317_b="the system, making it impossible to safely supply power to the load. Click on Retry to try"
-text_317_c="again."
+text_317_a="A transmission line was overloaded by your dispatch! This caused it to be unusable in the system, making it impossible to"
+text_317_b="safely supply power to the load. Click on Retry to try again."
+text_317_c=""
 
-text_318_a="Good job on satisfying power balance and keeping flows within line limits! However, this"
-text_318_b="isn’t the most cost-effective dispatch. Can you find a configuration that satisfies "
-text_318_c="constraints while minimizing cost? Click Retry to try again."
+text_318_a="Good job on satisfying power balance and keeping flows within line limits! However, this isn’t the most cost-effective"
+text_318_b="dispatch. Can you find a configuration that satisfies the constraints while minimizing cost? Click Retry to try again."
+text_318_c=""
 
-text_319_a="Well done! You found the minimum cost dispatch while satisfying the system constraints."
-text_319_b="As you may tell, There are a lot of factors to consider when running a power grid!"
+text_319_a="Well done! You found the minimum cost dispatch while satisfying the system constraints. As you may tell, There are a lot"
+text_319_b="of factors to consider when running a power grid!"
 
-text_320_a="Congratulations, you have completed module 3. Through these 3 modules, you have"
-text_320_b="learned the basics of power systems operation. We will next introduce renewable energy"
-text_320_c="to show their benefits and limitations."
+text_320_a="Congratulations, you have completed module 3. Through these 3 modules, you have learned the basics of power"
+text_320_b="systems operation. We will next introduce renewable energy to show their benefits and limitations."
+text_320_c=""
 
-text_321_a="Line ratings are now displayed next to each line. The predicted power flow in each line"
-text_321_b="will also be updated as you move the sliders. Additional information have been added to"
-text_321_c="the information screen."
+text_400_a = 'Welcome to module 4 of “A Greener Grid”! In the section we will begin an introduction on the role of renewable energy'
+text_400_b = 'in power systems.'
 
-text_323_a="Good job on satisfying power balance! Let's check if the line limits are respected."
-text_323_b="Click on the Next button."
+text_401_a = 'Previously, we used solely conventional generators, which use carbon-based resources to power turbines. Next we will'
+text_401_b = 'examine how renewable energy changes the power flow problem.'
 
+text_402_a = 'Wind and solar power are variable and intermittent due to their dependence on nature. The main operational difference is'
+text_402_b = 'that unlike conventional generators, their output cannot be controlled.'
+
+text_403_a = 'To plan our dispatch, forecasts are often used in place of known values. These forecasts can range from very accurate to'
+text_403_b = 'wildly off depending on weather conditions.'
+
+text_404_a = 'Shown in the figure is the Ontario wind data from August 1st to 5th, 2022. Note the high degree of variation in wind'
+text_404_b = 'output and large forecast errors during Aug. 3rd.'
+
+text_405_a = 'To show their basic effects, generator 2 is now replaced by a wind plant with the symbol “W”. The first slider can no'
+text_405_b = 'longer be moved, and instead shows the forecasted wind value and an uncertainty range.'
+
+text_406_a = 'Using what we have learned, please adjust generator 2 such that power balance is achieved. When you are ready, click the'
+text_406_b = 'Run button.'
+
+text_407_a = 'Uh oh, you did not balance the power in the system correctly. Remember that the imbalance shows on the informational'
+text_407_b = 'screen. Click Retry to try again.'
+
+text_408_a = 'Good job. The power flow results are shown on the screen. Notice that the generator value is different from the one you'
+text_408_b = 'set! This is because the wind output also deviated from its forecast. This is done automatically in real power systems in a'
+text_408_c = 'process named “redispatch”.'
+
+text_409_a = 'We were lucky that the wind error did not cause issues, but you can see how this may be problematic. We have reset the'
+text_409_b = 'problem with a greater wind uncertainty. Click Run and see what could potentially happen.'
+
+text_410_a = 'In this scenario, the actual wind output fell short of the anticipated amount. Notice how we do not have enough capacity to'
+text_410_b = 'run the system anymore even when we max out generator 2! A system that overly relies on variable renewable energy can'
+text_410_c = 'face problems during renewable shortfalls.'
+
+text_411_a = 'We will also show the case when the wind plant generates more than anticipated. Click Run to see.'
+
+text_412_a = 'In this scenario, wind is generating greater than predicted. However, this has overloaded the line between bus 1 and 3.'
+text_412_b = 'As previously explained, this can lead to a line outage, further disrupting the system. These are just some of the challenges'
+text_412_c = 'introduced by renewable energy.'
+
+text_413_a = 'We have been treating the load as a constant up until now. Power demand also fluctuates throughout the days and seasons.'
+text_413_b = 'See the demand variation across one day in the figure. This is why electricity prices depend on which hour you use them!'
+
+text_414_a = 'Another challenge posed by renewables is the fact that load patterns do not always match renewable output patterns. If an'
+text_414_b = 'energy source generates a lot when we do not need it or little when we do, what is the point?'
+
+text_415_a = 'Energy storage technologies alleviates these problems by allowing energy to be stored and used at another time. Increasing'
+text_415_b = 'transmission capacity and generation reserves can also prevent the two cases we saw earlier.'
+
+text_416_a = 'Of course, increasing renewable energy is a vital step towards net zero emission goals. Wind and solar energy produce'
+text_416_b = 'drastically less carbon emissions compared to natural gas and coal plants.'
+
+text_417_a = 'Despite their challenges, renewables have seen a historic growth in the past decade while costs have declined. Many'
+text_417_b = 'countries are offering incentives for renewable energy projects and progress is being made globally.'
+
+text_418_a = 'Congratulations, you have completed module 4. Hopefully you have learned a few more things about how renewable'
+text_418_b = 'energy fits into the power grid, the challenges they pose, and ways of reducing their impact on system reliability.'
+
+text_500_a = 'Welcome to module 5 of “A Greener Grid”! In the section we will dive into the different types of energy resources'
+text_500_b = 'commonly used around the world, and their costs and carbon emissions.'
+
+text_501_a = 'Canada’s goal is to become a net-zero greenhouse gas emitting country by 2050. This commitment has driven a shift in the'
+text_501_b = 'energy sector away from nonrenewable resources toward previously uncompetitive higher-cost green energy. Let\'s take a'
+text_501_c = 'look at some common resources.'
+
+text_502_a = 'Coal power is the oldest type of large-scale energy resource and offers reliable power at a low cost. However, its'
+text_502_b = 'Greenhouse Gas Emissions (GHG) are the highest out of any other energy resource, traditionally being between 750 and'
+text_502_c = '1100 grams of CO2 per kWh of electricity produced.'
+
+text_503_a = 'While its affordability has been valued to maintain low electricity prices, its high GHG emissions have led to a decrease'
+text_503_b = 'in their use over the past decades.'
+
+text_504_a = 'Natural gas power plants are the most used fossil fuel in electricity production, supplying 25% of the world’s electricity.'
+text_504_b = 'Their emissions, while being significantly lower than coal, are still substantial, averaging between 400 and 500 grams of'
+text_504_c = 'CO2 per kWh of produced electricity.'
+
+text_505_a = 'While transitioning fully to green energy resources would be ideal, the current capacities of those resources do not allow'
+text_505_b = 'for it to be possible yet. For that reason, countries are implementing Carbon Capture and Storage technologies in order to'
+text_505_c = 'reduce the impact of the fossil fuel share that cannot be phased out currently.'
+
+text_506_a = 'The main CCS consists of capturing the CO2 emitted during the electricity generation process and transport it to an area'
+text_506_b = 'where it can be stored underground in geological formations. Thanks to those methods, Coal and Natural Gas emissions'
+text_506_c = 'can be reduced up to 147 and 92 grams of CO2 per kWh respectively.'
+
+text_507_a = 'Hydroelectric is the most popular renewable energy resource in Canada thanks to geographic availability. Its generation'
+text_507_b = 'process is technically non-emitting, it requires reservoirs which are producing GHG due to the decomposition of organic'
+text_507_c = 'material within them. This leads to a high variability in their emissions, ranging from 6 to 147 grams of CO2 per kWh.'
+
+text_508_a = 'Nuclear Energy is a unique type of energy resource, as it is the lowest CO2 emitting resource, but produces nuclear waste,'
+text_508_b = 'which needs to be isolated and stored until their radioactivity becomes harmless, which can take thousands of years. In'
+text_508_c = 'addition to this, its power output is hard to control and it cannot be switched off easily.'
+
+text_509_a = 'Wind Energy consists of arrays of large wind turbines using the wind speed in the region to convert mechanical power of'
+text_509_b = 'their rotors into electrical power. Its cost per kWh of electricity is higher than most electricity production means due to'
+text_509_c = 'lower efficiency.'
+
+text_510_a = 'Since their power output is proportional to the wind speed, only specific areas are favorable for their installation, and'
+text_510_b = 'battery storage systems are necessary to store the excess of electricity and release it during low wind speed intervals.'
+
+text_511_a = 'Solar Energy harnesses the power of the daily solar irradiance. Its high variability in GHG emissions is related to the two'
+text_511_b = 'types of solar energy installations: concentrated solar power and photovoltaic panels.'
+
+text_512_a = 'Concentrated Solar Power (CSP) is a large-scale solar energy production plant which consists of a system of mirror that'
+text_512_b = 'focus a solar beam on a receiver which will use the heat to power a turbine.'
+
+text_513_a = 'Photovoltaic panels can be implemented on a residential scale or a commercial scale (solar farms). They are made of arrays'
+text_513_b = 'of photovoltaic cells that capture the photon energy to create electricity. Their efficiency is low and a high amount of'
+text_513_c = 'power is lost in heat which leads to an increase in the panels’ temperature, lowering their efficiency.'
+
+text_514_a = 'This graph shows the Ontario electricity supply breakdown for the December 2022. Nuclear, due to its low emissions,'
+text_514_b = 'cost, and inflexible output, is prioritized, followed by hydro and natural gas. Wind and solar are used last, as their high'
+text_514_c = 'cost and variable nature makes energy planning challenging, as discussed in module 4.'
+
+text_515_a = 'In 2022, most of Canada’s electricity supplied relied on Hydroelectric, followed by Nuclear and natural gas. Ontario has'
+text_515_b = 'phased out coal entirely from their electricity production, but it is still being used in other provinces.'
+
+text_516_a = 'Congratulations, you have completed module 5. You should now be familiar with the common types of electricity'
+text_516_b = 'generation methods and their contributions to the grid.'
+
+
+# module 6
 text_hydro_title = 'Hydro'
 text_hydro_cost = '$10/MW'
 text_hydro_emissions = '10 tCO2e/MW'
